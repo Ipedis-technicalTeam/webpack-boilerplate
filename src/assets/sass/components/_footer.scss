@@ -1,0 +1,7 @@
+@use "../theme" as *;
+@use "../utilities" as *;
+
+footer {
+  background-color: $footerBackgroundColor;
+  color: $footerTextColor;
+}

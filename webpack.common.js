@@ -1,5 +1,4 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackPartialsPlugin = require("html-webpack-partials-plugin");
 
 module.exports = {
@@ -7,13 +6,7 @@ module.exports = {
 
   module: {
     rules: [
-      // HTML LOADER
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
-      },
-
-      // ASSETS LOADER
+      // // ASSETS LOADER
       {
         test: /\.(png|svg|jpe?g|webp|pdf)$/i,
         type: "asset/resource",
@@ -31,27 +24,37 @@ module.exports = {
     ],
   },
 
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      filename: "index.html",
-      minify: true,
-    }),
+  resolve: {
+    fallback: {
+      fs: false,
+    },
+  },
 
+  plugins: [
+    // PARTIALS HTML
     new HtmlWebpackPartialsPlugin([
       {
-        path: path.join(__dirname, "./src/partials/header.html"),
+        path: path.join(__dirname, "./src/partials/Navigation.html"),
         template_filename: "index.html",
+        inject: true,
         location: "root",
       },
       {
-        path: path.join(__dirname, "./src/partials/body.html"),
+        path: path.join(__dirname, "./src/partials/Header.html"),
         template_filename: "index.html",
+        inject: true,
         location: "root",
       },
       {
-        path: path.join(__dirname, "./src/partials/footer.html"),
+        path: path.join(__dirname, "./src/partials/Main.html"),
         template_filename: "index.html",
+        inject: true,
+        location: "root",
+      },
+      {
+        path: path.join(__dirname, "./src/partials/Footer.html"),
+        template_filename: "index.html",
+        inject: true,
         location: "root",
       },
     ]),

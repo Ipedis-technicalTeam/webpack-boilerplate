@@ -1,6 +1,8 @@
 const path = require("path");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const FR = require("./src/locales/fr.json");
 
 module.exports = merge(common, {
   mode: "development",
@@ -32,4 +34,14 @@ module.exports = merge(common, {
       },
     ],
   },
+
+  plugins: [
+    // HTML
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      template: "./src/index.html",
+      title: FR.head.title + " - Development",
+      lang: "fr",
+    }),
+  ],
 });

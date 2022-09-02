@@ -1,4 +1,4 @@
-@use "../utilities/fade" as *;
+@use "../utilities" as *;
 
 /*______________________________________________________________________
   ------------------------------ COLORS --------------------------------
@@ -6,8 +6,8 @@
 
 /* Main Colors
 ----------------------------------*/
-$primaryColor: #e34405;
-$secondaryColor: #0066d3;
+$primaryColor: #b00057;
+$secondaryColor: #0f8570;
 
 /* Neutral Colors
 ----------------------------------*/
@@ -17,13 +17,13 @@ $darkColor: #1f1f1f;
 /* General Colors
 ----------------------------------*/
 $bodyBackgroundColor: $lightColor;
-// $bodyTextColor: contrast($bodyBackgroundColor, $lightColor, $darkColor);
+$bodyTextColor: contrast($bodyBackgroundColor, $lightColor, $darkColor);
 
 $navBackgroundColor: $lightColor;
-// $navTextColor: contrast($navBackgroundColor, $lightColor, $darkColor);
+$navTextColor: contrast($navBackgroundColor, $lightColor, $darkColor);
 
 $headerBackgroundColor: fade(darken($darkColor, 100), 70);
-// $headerTextColor: contrast($headerBackgroundColor, $lightColor, $darkColor);
+$headerTextColor: contrast($headerBackgroundColor, $lightColor, $darkColor);
 
 $footerBackgroundColor: $darkColor;
-// $footerTextColor: contrast($footerBackgroundColor, $lightColor, $darkColor);
+$footerTextColor: contrast($footerBackgroundColor, $lightColor, $darkColor);

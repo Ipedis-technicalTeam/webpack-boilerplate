@@ -1,0 +1,21 @@
+{
+  "head": {
+    "title": "Webpack Boilerplate | FR"
+  },
+
+  "navigation": {
+    "heading": "French Navigation"
+  },
+
+  "header": {
+    "heading": "French Header"
+  },
+
+  "main": {
+    "heading": "French Main"
+  },
+
+  "footer": {
+    "heading": "French Footer"
+  }
+}

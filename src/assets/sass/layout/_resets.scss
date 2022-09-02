@@ -1,5 +1,4 @@
-@use "./colors" as *;
-@use "./sizes" as *;
+@use "../theme" as *;
 @use "../utilities" as *;
 
 html,
@@ -41,15 +40,8 @@ html {
 
 body {
   min-height: $headerHeight;
-  @include color-scheme($bodyBackgroundColor);
-}
-
-nav {
-  @include color-scheme($navBackgroundColor);
-}
-
-footer {
-  @include color-scheme($footerBackgroundColor);
+  background-color: $bodyBackgroundColor;
+  color: $bodyTextColor;
 }
 
 ol,
@@ -65,7 +57,15 @@ q {
 a,
 button,
 input[type="submit"] {
+  --focus-color: currentColor;
   all: unset;
   box-sizing: border-box;
   cursor: pointer;
+
+  &:focus,
+  &:focus-visible {
+    outline-offset: em(5);
+    outline: 2px solid var(--focus-color);
+    transition: 0.35s ease-in-out;
+  }
 }

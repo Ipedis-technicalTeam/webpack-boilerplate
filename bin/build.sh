@@ -1,9 +1,9 @@
-# npm run icons
-# npm run dist
+rm -rf dist && webpack --config webpack.fr.js
 
-# gulp build-icons --prod
-
-rm -rf dist && webpack --config webpack.prod.js
+webpack --config webpack.en.js
 
 cd dist
-zip -r deploy.zip ./*
+
+zip -r FR/fr.zip ./FR/*
+
+zip -r EN/en.zip ./EN/*

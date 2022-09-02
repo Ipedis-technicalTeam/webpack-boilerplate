@@ -1,5 +1,9 @@
 # PROJECT SETUP
 
+## command to launch project
+
+`npm run start`
+
 ## command to execute before deploy
 
 `npm run build`
@@ -8,16 +12,16 @@
 
 ./bin/build.sh
 
-## command to launch project
+## command to serve development
 
-`npm run start`
-
-## command to generate icons
-
-**add svg file in [src/assets/icons] and launch command**
-
-`npm run icons`
+`npm run dev`
 
 ## command to build dist
 
 `npm run dist`
+
+<!-- ## command to generate icons
+
+**add svg file in [src/assets/icons] and launch command**
+
+`npm run icons` -->

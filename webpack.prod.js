@@ -11,7 +11,6 @@ module.exports = merge(common, {
 
   output: {
     filename: "[name].[contenthash].js",
-    path: path.resolve(__dirname, "dist"),
     clean: true,
   },
 
@@ -46,7 +45,7 @@ module.exports = merge(common, {
   plugins: [
     // MINIFY CSS
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
+      filename: "index.[contenthash].css",
     }),
 
     // PURGE CSS
@@ -57,9 +56,16 @@ module.exports = merge(common, {
     // COPY FILES
     new CopyPlugin({
       patterns: [
+        // Files
         {
-          from: "./src/assets/files",
-          to: "./assets/files",
+          from: path.resolve(__dirname, "./src/assets/files"),
+          to: "./assets/files/[name][ext]",
+        },
+
+        // Images
+        {
+          from: path.resolve(__dirname, "./src/assets/images"),
+          to: "./assets/images/[name][ext]",
         },
       ],
     }),

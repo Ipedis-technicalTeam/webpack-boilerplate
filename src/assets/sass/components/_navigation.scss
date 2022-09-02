@@ -1,0 +1,7 @@
+@use "../theme" as *;
+@use "../utilities" as *;
+
+nav {
+  background-color: $navBackgroundColor;
+  color: $navTextColor;
+}
