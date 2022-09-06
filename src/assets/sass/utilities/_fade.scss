@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:color";
 
 /*______________________________________________________________________
   ----------------------------- Fade (Func.) ---------------------------
@@ -6,5 +7,6 @@
 
 @function fade($color, $percentage) {
   $num: math.div($percentage, 100);
-  @return rgba($color, $num);
+
+  @return color.change($color, $alpha: $num);
 }

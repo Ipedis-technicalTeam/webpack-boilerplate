@@ -39,7 +39,7 @@ html {
 }
 
 body {
-  min-height: $headerHeight;
+  min-block-size: 100vh; // Min-Height
   background-color: $bodyBackgroundColor;
   color: $bodyTextColor;
 }
@@ -56,16 +56,15 @@ q {
 
 a,
 button,
-input[type="submit"] {
-  --focus-color: currentColor;
+[type="submit"] {
   all: unset;
   box-sizing: border-box;
   cursor: pointer;
+  transition: $transition-in-out;
 
   &:focus,
   &:focus-visible {
     outline-offset: em(5);
-    outline: 2px solid var(--focus-color);
-    transition: 0.35s ease-in-out;
+    outline: 2px solid var(--focus-color, currentColor);
   }
 }

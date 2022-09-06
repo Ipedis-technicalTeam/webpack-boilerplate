@@ -9,8 +9,8 @@
 ----------------------------------*/
 
 @function brightness($color) {
-  $lightness: (color.red($color) + color.green($color) + color.blue($color));
-  @return math.div($lightness, 255 * 3);
+  $brightness: (color.red($color) + color.green($color) + color.blue($color));
+  @return math.div($brightness, 255 * 3);
 }
 
 /* Calculate brightness ratio

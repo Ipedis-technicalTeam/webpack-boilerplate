@@ -1,0 +1,7 @@
+@use "../theme" as *;
+@use "../utilities" as *;
+
+header {
+  background-color: $headerBackgroundColor;
+  color: $headerTextColor;
+}

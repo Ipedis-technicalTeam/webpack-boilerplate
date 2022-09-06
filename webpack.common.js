@@ -2,7 +2,9 @@ const path = require("path");
 const HtmlWebpackPartialsPlugin = require("html-webpack-partials-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    index: "./src/index.js",
+  },
 
   module: {
     rules: [

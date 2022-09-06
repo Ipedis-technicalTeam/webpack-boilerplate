@@ -4,6 +4,12 @@ webpack --config webpack.en.js
 
 cd dist
 
-zip -r FR/fr.zip ./FR/*
+cd FR
 
-zip -r EN/en.zip ./EN/*
+zip -r fr.zip ./*
+
+cd ..
+
+cd EN
+
+zip -r en.zip ./*
