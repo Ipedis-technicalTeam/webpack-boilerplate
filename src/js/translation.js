@@ -3,8 +3,10 @@ import Translator from "@andreasremdt/simple-translator";
 import EN from "../locales/en.json";
 import FR from "../locales/fr.json";
 
+const defaultLang = "fr";
+
 const translator = new Translator({
-  defaultLanguage: "fr",
+  defaultLanguage: defaultLang,
   detectLanguage: true,
   debug: true,
   persist: false,
@@ -13,6 +15,7 @@ const translator = new Translator({
 
 translator.add("fr", FR);
 translator.add("en", EN);
+translator.translatePageTo(defaultLang);
 
 export const translationToggle = (lang, data) => {
   if (lang === "fr") {

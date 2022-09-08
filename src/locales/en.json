@@ -1,4 +1,15 @@
 {
+  "skip-link": {
+    "nav": {
+      "label": "Go to navigation",
+      "text": "Go to nav"
+    },
+    "content": {
+      "label": "Go to content",
+      "text": "Go to content"
+    }
+  },
+
   "head": {
     "title": "Webpack Boilerplate | EN"
   },

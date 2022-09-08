@@ -55,16 +55,21 @@ q {
 }
 
 a,
-button,
-[type="submit"] {
+button {
   all: unset;
+  color: inherit;
   box-sizing: border-box;
   cursor: pointer;
-  transition: $transition-in-out;
+}
 
+a,
+button,
+[type="submit"],
+[tabindex="0"] {
   &:focus,
   &:focus-visible {
     outline-offset: em(5);
     outline: 2px solid var(--focus-color, currentColor);
+    transition: all $transition-in-out;
   }
 }

@@ -36,6 +36,12 @@ module.exports = {
     // PARTIALS HTML
     new HtmlWebpackPartialsPlugin([
       {
+        path: path.join(__dirname, "./src/partials/Skip-Links.html"),
+        template_filename: "index.html",
+        inject: true,
+        location: "root",
+      },
+      {
         path: path.join(__dirname, "./src/partials/Navigation.html"),
         template_filename: "index.html",
         inject: true,

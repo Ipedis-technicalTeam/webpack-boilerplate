@@ -1,0 +1,20 @@
+@use "../theme" as *;
+@use "../utilities" as *;
+
+#skip-links {
+  background-color: $bodyBackgroundColor;
+  color: $bodyTextColor;
+
+  &:focus-within {
+    padding: $containerPadding;
+  }
+}
+
+.show-on-focus {
+  clip-path: none;
+
+  &:focus,
+  &:focus-visible {
+    position: static;
+  }
+}
