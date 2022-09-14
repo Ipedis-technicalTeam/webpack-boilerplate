@@ -1,18 +1,18 @@
 /*=================================FLEX=================================*/
 
 .d-flex {
-  display: flex !important;
+  display: flex;
 
   &--v {
-    align-items: center !important;
+    align-items: center;
   }
 
   &--h {
-    justify-content: center !important;
+    justify-content: center;
   }
 
   &--vh {
-    align-items: center !important;
-    justify-content: center !important;
+    align-items: center;
+    justify-content: center;
   }
 }

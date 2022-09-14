@@ -1,5 +1,5 @@
-@use "../theme" as *;
-@use "../utilities" as *;
+@use '../theme' as *;
+@use '../utilities' as *;
 
 html,
 body,
@@ -64,8 +64,8 @@ button {
 
 a,
 button,
-[type="submit"],
-[tabindex="0"] {
+[type='submit'],
+[tabindex='0'] {
   &:focus,
   &:focus-visible {
     outline-offset: em(5);

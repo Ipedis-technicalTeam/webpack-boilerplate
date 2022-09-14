@@ -1,5 +1,5 @@
-@use "sass:color";
-@use "sass:math";
+@use 'sass:color';
+@use 'sass:math';
 
 /*______________________________________________________________________
   ------------------------- Contrast (Func.) ---------------------------
@@ -24,9 +24,5 @@
 ----------------------------------------*/
 
 @function contrast($base, $color1: white, $color2: black) {
-  @return if(
-    brightness_ratio($base, $color1) > brightness_ratio($base, $color2),
-    $color1,
-    $color2
-  );
+  @return if(brightness_ratio($base, $color1) > brightness_ratio($base, $color2), $color1, $color2);
 }

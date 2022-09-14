@@ -1,16 +1,17 @@
-const path = require("path");
-const { merge } = require("webpack-merge");
-const common = require("./webpack.common.js");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const glob = require("glob");
-const PurgecssPlugin = require("purgecss-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
+const path = require('path');
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common.js');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const glob = require('glob');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const { mainModule } = require('process');
 
 module.exports = merge(common, {
-  mode: "production",
+  mode: 'production',
 
   output: {
-    filename: "[name].[contenthash].js",
+    filename: '[name].[contenthash].js',
     clean: true,
   },
 
@@ -18,23 +19,23 @@ module.exports = merge(common, {
     rules: [
       // SASS LOADER
       {
-        test: /\.scss$/i,
+        test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
+          'css-loader',
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
-              implementation: require("postcss"),
+              implementation: require('postcss'),
               postcssOptions: {
-                plugins: ["autoprefixer"],
+                plugins: ['autoprefixer'],
               },
             },
           },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
-              implementation: require("sass"),
+              implementation: require('sass'),
             },
           },
         ],
@@ -45,12 +46,12 @@ module.exports = merge(common, {
   plugins: [
     // MINIFY CSS
     new MiniCssExtractPlugin({
-      filename: "index.[contenthash].css",
+      filename: 'index.[contenthash].css',
     }),
 
     // PURGE CSS
     new PurgecssPlugin({
-      paths: glob.sync(`${path.join(__dirname, "src")}/**/*`, { nodir: true }),
+      paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true }),
     }),
 
     // COPY FILES
@@ -58,14 +59,14 @@ module.exports = merge(common, {
       patterns: [
         // Files
         {
-          from: path.resolve(__dirname, "./src/assets/files"),
-          to: "./assets/files/[name][ext]",
+          from: path.resolve(__dirname, './src/assets/files'),
+          to: './assets/files/[name][ext]',
         },
 
         // Images
         {
-          from: path.resolve(__dirname, "./src/assets/images"),
-          to: "./assets/images/[name][ext]",
+          from: path.resolve(__dirname, './src/assets/images'),
+          to: './assets/images/[name][ext]',
         },
       ],
     }),
@@ -73,7 +74,7 @@ module.exports = merge(common, {
 
   optimization: {
     minimize: true,
-    splitChunks: { chunks: "all" },
-    runtimeChunk: "single",
+    splitChunks: { chunks: 'all' },
+    runtimeChunk: 'single',
   },
 });

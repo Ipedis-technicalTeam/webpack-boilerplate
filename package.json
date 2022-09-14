@@ -4,8 +4,7 @@
   "description": "Webpack Boilerplate",
   "private": true,
   "scripts": {
-    "dev": "webpack serve --live-reload --config webpack.dev.js",
-    "start": "sh bin/start.sh",
+    "start": "webpack serve --open --live-reload --config webpack.dev.js",
     "build": "sh bin/build.sh"
   },
   "keywords": [
@@ -15,7 +14,7 @@
     "webpack",
     "web component"
   ],
-  "author": "ipedis",
+  "author": "Ipedis",
   "license": "ISC",
   "dependencies": {
     "@andreasremdt/simple-translator": "^2.0.4",

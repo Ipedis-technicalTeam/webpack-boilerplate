@@ -1,5 +1,5 @@
-@use "../theme" as *;
-@use "../utilities" as *;
+@use '../theme' as *;
+@use '../utilities' as *;
 
 body {
   font-family: $primaryFontRegular;
@@ -30,19 +30,65 @@ strong {
   }
 }
 
+h1 {
+  font-size: rem(40);
+
+  .guidelines & {
+    font-size: clamp(rem(32), 5vw + 1rem, rem(40));
+  }
+}
+
 h2 {
   font-size: rem(32);
 
   @include mq($ps-mobile) {
     font-size: rem(25);
   }
+
+  .guidelines & {
+    position: relative;
+
+    &::before {
+      content: '-';
+      position: relative;
+      margin-inline-end: 0.25em;
+    }
+  }
 }
 
-main p {
-  line-height: 1.4;
-  margin-block-end: rem(10);
+h3 {
+  font-size: rem(25);
 
-  &:last-child {
-    margin-block-end: 0;
+  .guidelines & {
+    padding-inline-start: rem(20);
+  }
+}
+
+p {
+  main & {
+    line-height: 1.4;
+    margin-block-end: rem(10);
+
+    &:last-child {
+      margin-block-end: 0;
+    }
+  }
+
+  .guidelines & {
+    padding-inline-start: rem(20);
+    margin-block-end: rem(20);
+
+    &:last-child {
+      margin-block-end: rem(30);
+    }
+  }
+}
+
+code {
+  font-size: rem(14);
+
+  .guidelines & {
+    padding: 0.5em;
+    line-height: 2.5em;
   }
 }

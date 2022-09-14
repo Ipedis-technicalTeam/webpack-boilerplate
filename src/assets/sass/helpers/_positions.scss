@@ -3,21 +3,22 @@ $positionValuesPixel: 0;
 
 /*POSITION*/
 
-.p-relative {
+.pos-relative {
   position: relative;
 }
 
-.p-absolute {
+.pos-absolute {
   position: absolute;
   inset-block-start: 0; // Top
   inset-inline-start: 0; // Left
 
   &--full {
+    position: absolute;
     inset: 0;
   }
 }
 
-.p-fixed {
+.pos-fixed {
   position: fixed;
 }
 
