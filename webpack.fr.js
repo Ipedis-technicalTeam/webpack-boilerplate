@@ -12,8 +12,8 @@ module.exports = merge(prod, {
   plugins: [
     // HTML
     new HtmlWebpackPlugin({
+      template: path.join(__dirname, './src/index.html'),
       filename: 'index.html',
-      template: './src/index.html',
       title: FR.head.title,
       lang: 'fr',
     }),

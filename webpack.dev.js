@@ -6,7 +6,7 @@ const htmlPartialsPageNames = require('./src/partials').htmlPartialsPageNames;
 
 let multipleHtmlPlugins = htmlPartialsPageNames.map(name => {
   return new HtmlWebpackPlugin({
-    template: `./src/partials/${name}.html`,
+    template: path.join(__dirname, `./src/partials/${name}.html`),
     filename: `${name}.html`,
   });
 });
@@ -45,8 +45,8 @@ module.exports = merge(common, {
   plugins: [
     // HTML
     new HtmlWebpackPlugin({
+      template: path.join(__dirname, './src/index.html'),
       filename: 'index.html',
-      template: './src/index.html',
       title: 'Development',
       lang: 'fr',
     }),
