@@ -1,5 +1,16 @@
-@use "../theme" as *;
-@use "../utilities" as *;
+@use '../theme' as *;
+@use '../utilities' as *;
+
+* {
+  --focus-color: currentColor;
+
+  &:focus,
+  &:focus-visible {
+    outline-offset: em(5);
+    outline: 2px solid var(--focus-color);
+    transition: all $transition-in-out;
+  }
+}
 
 html,
 body,
@@ -38,7 +49,10 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+body,
+#root {
+  display: block;
+  inline-size: 100vw; // Width
   min-block-size: 100vh; // Min-Height
   background-color: $bodyBackgroundColor;
   color: $bodyTextColor;
@@ -60,16 +74,4 @@ button {
   color: inherit;
   box-sizing: border-box;
   cursor: pointer;
-}
-
-a,
-button,
-[type="submit"],
-[tabindex="0"] {
-  &:focus,
-  &:focus-visible {
-    outline-offset: em(5);
-    outline: 2px solid var(--focus-color, currentColor);
-    transition: all $transition-in-out;
-  }
 }

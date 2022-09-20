@@ -1,34 +1,34 @@
-@use "../utilities" as *;
+@use '../utilities' as *;
 
-$paddings: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50; // insert value to create margin-[top, right, bottom, left] HERE
+$paddings: 50; // insert value to create margin-[top, right, bottom, left] HERE
 
-@each $padding in $paddings {
+@for $padding from 1 through $paddings {
   .p-#{$padding} {
-    padding: rem($padding) !important;
+    padding: rem($padding);
   }
 
   .pt-#{$padding} {
-    padding-block-start: rem($padding) !important; // Padding Top
+    padding-block-start: rem($padding); // Padding Top
   }
 
   .pb-#{$padding} {
-    padding-block-end: rem($padding) !important; // Padding Bottom
+    padding-block-end: rem($padding); // Padding Bottom
   }
 
   .pl-#{$padding} {
-    padding-inline-start: rem($padding) !important; // Padding Left
+    padding-inline-start: rem($padding); // Padding Left
   }
 
   .pr-#{$padding} {
-    padding-inline-end: rem($padding) !important; // Padding Right
+    padding-inline-end: rem($padding); // Padding Right
   }
 
   .px-#{$padding} {
-    padding-inline: rem($padding) !important; // Padding Left and Right
+    padding-inline: rem($padding); // Padding Left and Right
   }
 
   .py-#{$padding} {
-    padding-block: rem($padding) !important; // Padding Top and Bottom
+    padding-block: rem($padding); // Padding Top and Bottom
   }
 }
 

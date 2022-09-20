@@ -5,13 +5,13 @@ $ps-breakpoint-mobile: 767px;
 $ps-breakpoint-mobile-landscape: 992px;
 $ps-breakpoint-desktop: $ps-breakpoint-tablet + 1;
 
-$ps-mobile: "only screen and (max-width: #{$ps-breakpoint-mobile}) and (orientation: portrait), only screen and (max-width: #{$ps-breakpoint-mobile-landscape}) and (orientation: landscape)";
-$ps-mobile-portrait: "only screen and (max-width: #{$ps-breakpoint-mobile}) and (orientation: portrait)";
-$ps-mobile-landscape: "only screen and (max-width: #{$ps-breakpoint-mobile-landscape}) and (orientation: landscape)";
-$ps-tablet: "only screen and (max-width: #{$ps-breakpoint-tablet})";
-$ps-small-tablet: "only screen and (max-width: #{$ps-breakpoint-small-tablet})";
-$ps-tablet-landscape: "only screen and (max-width: #{$ps-breakpoint-tablet}) and (orientation: landscape)";
-$ps-desktop: "only screen and (min-width: #{$ps-breakpoint-desktop})";
+$ps-mobile: 'only screen and (max-width: #{$ps-breakpoint-mobile}) and (orientation: portrait), only screen and (max-width: #{$ps-breakpoint-mobile-landscape}) and (orientation: landscape)';
+$ps-mobile-portrait: 'only screen and (max-width: #{$ps-breakpoint-mobile}) and (orientation: portrait)';
+$ps-mobile-landscape: 'only screen and (max-width: #{$ps-breakpoint-mobile-landscape}) and (orientation: landscape)';
+$ps-tablet: 'only screen and (max-width: #{$ps-breakpoint-tablet})';
+$ps-small-tablet: 'only screen and (max-width: #{$ps-breakpoint-small-tablet})';
+$ps-tablet-landscape: 'only screen and (max-width: #{$ps-breakpoint-tablet}) and (orientation: landscape)';
+$ps-desktop: 'only screen and (min-width: #{$ps-breakpoint-desktop})';
 
 /*===== Either Using Variables or @includes =====*/
 @media #{$ps-mobile} {

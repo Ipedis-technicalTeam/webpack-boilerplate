@@ -1,30 +1,30 @@
-@use "../utilities" as *;
+@use '../utilities' as *;
 
-$margins: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50; // insert value to create margin-[top, right, bottom, left] HERE
+$margins: 50; // insert max-value to create margin-[top, right, bottom, left] HERE
 
-@each $margin in $margins {
+@for $margin from 1 through $margins {
   .m-#{$margin} {
-    margin: rem($margin) !important;
+    margin: rem($margin);
   }
   .mt-#{$margin} {
-    margin-block-start: rem($margin) !important; // Margin Top
+    margin-block-start: rem($margin); // Margin Top
   }
   .mb-#{$margin} {
-    margin-block-end: rem($margin) !important; // Margin Bottom
+    margin-block-end: rem($margin); // Margin Bottom
   }
   .ml-#{$margin} {
-    margin-inline-start: rem($margin) !important; // Margin Left
+    margin-inline-start: rem($margin); // Margin Left
   }
   .mr-#{$margin} {
-    margin-inline-end: rem($margin) !important; // Margin Right
+    margin-inline-end: rem($margin); // Margin Right
   }
 
   .mx-#{$margin} {
-    margin-inline: rem($margin) !important; // Margin Left and Right
+    margin-inline: rem($margin); // Margin Left and Right
   }
 
   .my-#{$margin} {
-    margin-block: rem($margin) !important; // Margin Top and Bottom
+    margin-block: rem($margin); // Margin Top and Bottom
   }
 }
 

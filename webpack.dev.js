@@ -1,16 +1,24 @@
-const path = require("path");
-const { merge } = require("webpack-merge");
-const common = require("./webpack.common.js");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common.js');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const htmlPartialsPageNames = require('./src/partials').htmlPartialsPageNames;
+
+let multipleHtmlPlugins = htmlPartialsPageNames.map(name => {
+  return new HtmlWebpackPlugin({
+    template: path.join(__dirname, `./src/partials/${name}.html`),
+    filename: `${name}.html`,
+  });
+});
 
 module.exports = merge(common, {
-  mode: "development",
+  mode: 'development',
 
-  devtool: "source-map",
+  devtool: 'source-map',
 
   devServer: {
     static: {
-      directory: path.join(__dirname, "./src"),
+      directory: path.join(__dirname, './src'),
     },
     port: 3000,
   },
@@ -21,12 +29,12 @@ module.exports = merge(common, {
       {
         test: /\.scss$/i,
         use: [
-          "style-loader",
-          "css-loader",
+          'style-loader',
+          'css-loader',
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
-              implementation: require("sass"),
+              implementation: require('sass'),
             },
           },
         ],
@@ -37,10 +45,12 @@ module.exports = merge(common, {
   plugins: [
     // HTML
     new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: "./src/index.html",
-      title: "Development",
-      lang: "fr",
+      template: path.join(__dirname, './src/index.html'),
+      filename: 'index.html',
+      title: 'Development',
+      lang: 'fr',
     }),
+
+    ...multipleHtmlPlugins,
   ],
 });

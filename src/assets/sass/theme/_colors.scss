@@ -1,4 +1,4 @@
-@use "../utilities" as *;
+@use '../utilities' as *;
 
 /*______________________________________________________________________
   ------------------------------ COLORS --------------------------------
@@ -27,3 +27,6 @@ $headerTextColor: contrast($headerBackgroundColor, $lightColor, $darkColor);
 
 $footerBackgroundColor: $darkColor;
 $footerTextColor: contrast($footerBackgroundColor, $lightColor, $darkColor);
+
+$guidelinesBackgroundColor: #333844;
+$guidelinesTextColor: contrast($guidelinesBackgroundColor, #ffc640, $darkColor);

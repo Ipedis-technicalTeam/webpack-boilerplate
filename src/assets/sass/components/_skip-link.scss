@@ -1,9 +1,10 @@
-@use "../theme" as *;
-@use "../utilities" as *;
+@use '../theme' as *;
+@use '../utilities' as *;
 
 #skip-links {
-  background-color: $bodyBackgroundColor;
-  color: $bodyTextColor;
+  background-color: $bodyTextColor;
+  color: contrast($bodyTextColor, $lightColor, $darkColor);
+  z-index: 99999;
 
   &:focus-within {
     padding: $containerPadding;
@@ -11,10 +12,11 @@
 }
 
 .show-on-focus {
-  clip-path: none;
-
   &:focus,
   &:focus-visible {
+    clip-path: none;
     position: static;
+    inline-size: fit-content;
+    block-size: fit-content;
   }
 }
