@@ -6,7 +6,7 @@
   ______________________________________________________________________ */
 
 @function fade($color, $percentage) {
-  $num: math.div($percentage, 100);
+  $num: if(math.is-unitless($percentage), math.div($percentage, 100), math.div($percentage, 100%));
 
   @return color.change($color, $alpha: $num);
 }

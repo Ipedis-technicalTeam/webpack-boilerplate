@@ -3,7 +3,7 @@
 /*========== Convert Pixels to REM ==========*/
 
 @function rem($pixels) {
-  $rem: math.div($pixels, 16);
+  $rem: if(math.is-unitless($pixels), math.div($pixels, 16), math.div($pixels, 16px));
 
   @return $rem * 1rem;
 }
@@ -11,7 +11,7 @@
 /*========== Convert Pixels to EM ==========*/
 
 @function em($pixels) {
-  $em: math.div($pixels, 16);
+  $em: if(math.is-unitless($pixels), math.div($pixels, 16), math.div($pixels, 16px));
 
   @return $em * 1em;
 }
