@@ -153,13 +153,13 @@ as shown in the example below the `"navigation"` will be injected first then the
     color: contrast(#ff0000, white, black); // Will return white in this case
     ```
 
-  - Fade: The `fade()` function will return the color in an rgba format and set the opacity. It take two arguments, the first one is the color either in hex value `"#0000ff"` or color name `"blue"`, the second one is the opacity a number between 0 to 100.
+  - Fade: The `fade()` function will return the color in an rgba format and set the opacity. It take two arguments, the first one is the color either in hex value `"#0000ff"` or color name `"blue"`, the second one is the opacity a number between 0 to 100 or in percentages.
 
     ```
     background-color: fade(blue, 50); // Will return rgba(0, 0, 255, 0.5).
     ```
 
-  - Units: The units file contain two functions `rem()` and `em()` which convert pixels into the respective unit which is base on a `16px` root value. The functions take one argument which is the pixels but without the `px` unit.
+  - Units: The units file contain two functions `rem()` and `em()` which convert pixels into the respective unit which is base on a `16px` root value. The functions take one argument which is the pixels with or without the `px` unit.
 
     ```
     font-size: rem(32); // Will convert 32px to 2rem.
