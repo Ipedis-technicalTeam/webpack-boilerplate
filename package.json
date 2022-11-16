@@ -1,5 +1,5 @@
 {
-  "name": "webpack-boilerplate",
+  "name": "ip-webpack-boilerplate",
   "version": "1.0.0",
   "description": "Webpack Boilerplate",
   "private": true,
@@ -18,7 +18,9 @@
   "license": "ISC",
   "dependencies": {
     "@andreasremdt/simple-translator": "^2.0.4",
-    "sass": "^1.54.4"
+    "ip-accordeon": "^0.0.4",
+    "ip-tab-panel": "^0.0.5",
+    "sass": "^1.56.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",

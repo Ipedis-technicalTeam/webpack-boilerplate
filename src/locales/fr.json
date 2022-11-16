@@ -2,11 +2,13 @@
   "skip-link": {
     "nav": {
       "label": "Aller vers la navigation",
+
       "text": "Aller vers nav"
     },
 
     "content": {
       "label": "Aller vers le contenu",
+
       "text": "Aller vers contenu"
     }
   },
@@ -17,6 +19,7 @@
 
   "navigation": {
     "heading": "French Navigation",
+
     "btn": "Switch to En"
   },
 

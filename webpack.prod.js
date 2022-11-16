@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const glob = require('glob');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const { mainModule } = require('process');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -52,6 +51,9 @@ module.exports = merge(common, {
     // PURGE CSS
     new PurgecssPlugin({
       paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true }),
+
+      // ********* ADD SAFE SELECTOR OR WORD TO EXCLUDE - E.g. Class .aos-animate is excluded ********* //
+      safelist: ['aos-animate'],
     }),
 
     // COPY FILES
@@ -59,14 +61,14 @@ module.exports = merge(common, {
       patterns: [
         // Files
         {
-          from: path.resolve(__dirname, './src/assets/files'),
-          to: './assets/files/[name][ext]',
+          from: path.resolve(__dirname, './src/assets/files/'),
+          to: './assets/files/',
         },
 
         // Images
         {
-          from: path.resolve(__dirname, './src/assets/images'),
-          to: './assets/images/[name][ext]',
+          from: path.resolve(__dirname, './src/assets/images/'),
+          to: './assets/images/',
         },
       ],
     }),

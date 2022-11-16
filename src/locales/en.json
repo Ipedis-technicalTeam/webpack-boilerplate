@@ -2,10 +2,12 @@
   "skip-link": {
     "nav": {
       "label": "Go to navigation",
+
       "text": "Go to nav"
     },
     "content": {
       "label": "Go to content",
+
       "text": "Go to content"
     }
   },
@@ -16,6 +18,7 @@
 
   "navigation": {
     "heading": "English Navigation",
+
     "btn": "Switch to Fr"
   },
 

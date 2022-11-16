@@ -1,19 +1,9 @@
 @use '../theme' as *;
 @use '../utilities' as *;
 
-* {
-  --focus-color: currentColor;
-
-  &:focus,
-  &:focus-visible {
-    outline-offset: em(5);
-    outline: 2px solid var(--focus-color);
-    transition: all $transition-in-out;
-  }
-}
-
 html,
 body,
+root,
 div,
 span,
 h1,
@@ -37,7 +27,11 @@ summary,
 mark,
 audio,
 video {
+  margin-inline: 0;
+  margin-block: 0;
   margin: 0;
+  padding-inline: 0;
+  padding-block: 0;
   padding: 0;
   border: 0;
   vertical-align: baseline;
@@ -49,13 +43,18 @@ html {
   scroll-behavior: smooth;
 }
 
-body,
-#root {
-  display: block;
-  inline-size: 100vw; // Width
+body {
   min-block-size: 100vh; // Min-Height
   background-color: $bodyBackgroundColor;
   color: $bodyTextColor;
+  overflow-x: hidden;
+}
+
+#root {
+  all: inherit;
+  background-color: transparent;
+  padding: unset;
+  margin: unset;
 }
 
 ol,
@@ -71,7 +70,16 @@ q {
 a,
 button {
   all: unset;
+  display: inline-block;
   color: inherit;
   box-sizing: border-box;
+  transition: all $transition-in-out;
   cursor: pointer;
+
+  &:focus,
+  &:focus-visible {
+    outline-offset: em(5);
+    outline: rem(2px) solid var(--focus-color, currentColor);
+    transition: all $transition-in-out;
+  }
 }

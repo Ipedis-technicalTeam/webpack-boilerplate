@@ -18,7 +18,7 @@ module.exports = {
 
   module: {
     rules: [
-      // // ASSETS LOADER
+      // ASSETS LOADER
       {
         test: /\.(png|svg|jpe?g|webp|pdf)$/i,
         type: 'asset/resource',

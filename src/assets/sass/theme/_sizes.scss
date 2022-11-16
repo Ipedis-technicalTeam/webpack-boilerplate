@@ -1,8 +1,8 @@
 @use '../utilities' as *;
 
 /******* HEIGHTS *******/
-$navHeight: rem(80);
+$navHeight: rem(80px);
 $headerHeight: 100vh;
 
 /******* PADDINGS *******/
-$containerPadding: rem(30);
+$containerPaddingMobile: rem(30px);

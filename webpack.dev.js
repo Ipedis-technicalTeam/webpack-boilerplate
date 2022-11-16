@@ -47,7 +47,11 @@ module.exports = merge(common, {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, './src/index.html'),
       filename: 'index.html',
+
+      // ********* TO CHANGE TITLE FOR DEV MODE ********* //
       title: 'Development',
+
+      // ********* TO CHANGE LANG FOR DEV MODE ********* //
       lang: 'fr',
     }),
 

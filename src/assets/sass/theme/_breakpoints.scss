@@ -14,5 +14,12 @@ $ps-tablet-landscape: 'only screen and (max-width: #{$ps-breakpoint-tablet}) and
 $ps-desktop: 'only screen and (min-width: #{$ps-breakpoint-desktop})';
 
 /*===== Either Using Variables or @includes =====*/
+/*
 @media #{$ps-mobile} {
 }
+
+OR
+
+@include mq($ps-mobile) {
+}
+*/

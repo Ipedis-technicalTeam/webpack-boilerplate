@@ -6,13 +6,13 @@
 
 /* Main Colors
 ----------------------------------*/
-$primaryColor: #b00057;
-$secondaryColor: #0f8570;
+$primaryColor: #b00057; // Change to your Primary Color
+$secondaryColor: #0f8570; // Change to your Secondary Color
 
 /* Neutral Colors
 ----------------------------------*/
-$lightColor: #ffffff;
-$darkColor: #1f1f1f;
+$lightColor: #ffffff; // Change to your White Color
+$darkColor: #1f1f1f; // Change to your Black Color
 
 /* General Colors
 ----------------------------------*/
@@ -25,8 +25,8 @@ $navTextColor: contrast($navBackgroundColor, $lightColor, $darkColor);
 $headerBackgroundColor: fade(darken($darkColor, 100), 70);
 $headerTextColor: contrast($headerBackgroundColor, $lightColor, $darkColor);
 
+$prefooterBackgroundColor: $primaryColor;
+$prefooterTextColor: contrast($prefooterBackgroundColor, $lightColor, $darkColor);
+
 $footerBackgroundColor: $darkColor;
 $footerTextColor: contrast($footerBackgroundColor, $lightColor, $darkColor);
-
-$guidelinesBackgroundColor: #333844;
-$guidelinesTextColor: contrast($guidelinesBackgroundColor, #ffc640, $darkColor);

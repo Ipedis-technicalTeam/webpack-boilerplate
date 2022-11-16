@@ -6,10 +6,10 @@ cd dist
 
 cd FR
 
-zip -r fr.zip ./*
+zip -r deploy.zip ./*
 
 cd ..
 
 cd EN
 
-zip -r en.zip ./*
+zip -r deploy.zip ./*
