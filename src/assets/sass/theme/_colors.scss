@@ -22,7 +22,7 @@ $bodyTextColor: contrast($bodyBackgroundColor, $lightColor, $darkColor);
 $navBackgroundColor: $lightColor;
 $navTextColor: contrast($navBackgroundColor, $lightColor, $darkColor);
 
-$headerBackgroundColor: fade(darken($darkColor, 100), 70);
+$headerBackgroundColor: fade(darken($darkColor, 100), 70%);
 $headerTextColor: contrast($headerBackgroundColor, $lightColor, $darkColor);
 
 $prefooterBackgroundColor: $primaryColor;

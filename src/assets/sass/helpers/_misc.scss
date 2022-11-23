@@ -1,3 +1,5 @@
+@use '../utilities' as *;
+
 .nbsp {
   white-space: nowrap;
 }
@@ -12,4 +14,12 @@
   overflow: hidden;
   padding: 0;
   white-space: nowrap;
+
+  @include not-support('inline-size: 1px') {
+    width: 1px;
+  }
+
+  @include not-support('block-size: 1px') {
+    height: 1px;
+  }
 }

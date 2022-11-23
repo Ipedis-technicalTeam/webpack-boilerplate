@@ -1,5 +1,0 @@
-@mixin mq($size) {
-  @media #{$size} {
-    @content;
-  }
-}

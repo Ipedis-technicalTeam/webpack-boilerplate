@@ -1,3 +1,5 @@
+@use '../utilities' as *;
+
 $positionValuesPercentage: 100;
 $positionValuesPixel: 0;
 
@@ -12,9 +14,24 @@ $positionValuesPixel: 0;
   inset-block-start: 0; // Top
   inset-inline-start: 0; // Left
 
+  @include not-support('inset-block-start: 0') {
+    top: 0;
+  }
+
+  @include not-support('inset-inline-start: 0') {
+    left: 0;
+  }
+
   &--full {
     position: absolute;
     inset: 0;
+
+    @include not-support('inset: 0') {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
   }
 }
 
@@ -27,35 +44,67 @@ $positionValuesPixel: 0;
 @for $i from 1 through $positionValuesPercentage {
   .pos-top-#{$i} {
     inset-block-start: $i + 0%; // Top
+
+    @include not-support('inset-block-start: 0%') {
+      top: $i + 0%;
+    }
   }
 
   .pos-bottom-#{$i} {
     inset-block-end: $i + 0%; // Bottom
+
+    @include not-support('inset-block-end: 0%') {
+      bottom: $i + 0%;
+    }
   }
 
   .pos-left-#{$i} {
     inset-inline-start: $i + 0%; // Left
+
+    @include not-support('inset-inline-start: 0%') {
+      left: $i + 0%;
+    }
   }
 
   .pos-right-#{$i} {
     inset-inline-end: $i + 0%; // Right
+
+    @include not-support('inset-inline-end: 0%') {
+      right: $i + 0%;
+    }
   }
 }
 
 @each $pos in $positionValuesPixel {
   .pos-top-#{$pos} {
     inset-block-start: #{$pos}; // Top
+
+    @include not-support('inset-block-start: 0') {
+      top: #{$pos};
+    }
   }
 
   .pos-bottom-#{$pos} {
     inset-block-end: #{$pos}; // Bottom
+
+    @include not-support('inset-block-end: 0') {
+      bottom: #{$pos};
+    }
   }
 
   .pos-left-#{$pos} {
     inset-inline-start: #{$pos}; // Left
+
+    @include not-support('inset-inline-start: 0') {
+      left: #{$pos};
+    }
   }
 
   .pos-right-#{$pos} {
     inset-inline-end: #{$pos}; // Right
+
+    @include not-support('inset-inline-end: 0') {
+      right: #{$pos};
+    }
   }
 }

@@ -11,6 +11,10 @@ body {
   @include mq($ps-mobile) {
     font-size: rem(16px);
   }
+
+  @include not-support('text-align: start') {
+    text-align: left;
+  }
 }
 
 strong {
@@ -28,6 +32,10 @@ h6 {
   font-weight: 500;
   line-height: 1.2;
   text-align: start; // Left
+
+  @include not-support('text-align: start') {
+    text-align: left;
+  }
 }
 
 h1 {
@@ -52,8 +60,16 @@ p {
   main & {
     margin-block-end: rem(10px);
 
+    @include not-support('margin-block-end: 0') {
+      margin-bottom: rem(10px);
+    }
+
     &:last-child {
       margin-block-end: 0;
+
+      @include not-support('margin-block-end: 0') {
+        margin-bottom: 0;
+      }
     }
   }
 }

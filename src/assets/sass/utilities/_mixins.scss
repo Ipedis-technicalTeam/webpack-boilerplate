@@ -1,0 +1,23 @@
+@mixin mq($size) {
+  @media #{$size} {
+    @content;
+  }
+}
+
+@mixin has-support() {
+  @supports selector(:has()) {
+    @content;
+  }
+}
+
+@mixin support($property) {
+  @supports (#{$property}) {
+    @content;
+  }
+}
+
+@mixin not-support($property) {
+  @supports not (#{$property}) {
+    @content;
+  }
+}

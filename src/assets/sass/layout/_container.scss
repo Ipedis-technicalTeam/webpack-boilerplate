@@ -2,15 +2,18 @@
 @use '../theme' as *;
 
 .container {
-  // Resets
-  all: inherit;
-  margin: unset;
-  padding: unset;
-  background-color: transparent;
-
   // Try to keep 960px max-width until screen is smaller than 960px and Add padding right and left to container on mobile
   inline-size: min(calc(100% - $containerPaddingMobile), rem(960px));
 
   // Margin Left and Right auto
   margin-inline: auto;
+
+  @include not-support('margin-inline: auto') {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include not-support('inline-size: 0') {
+    width: min(calc(100% - $containerPaddingMobile), rem(960px));
+  }
 }

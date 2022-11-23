@@ -9,26 +9,52 @@ $paddings: 50; // insert value to create margin-[top, right, bottom, left] HERE
 
   .pt-#{$padding} {
     padding-block-start: rem($padding); // Padding Top
+
+    @include not-support('padding-block-start: 0px') {
+      padding-top: rem($padding);
+    }
   }
 
   .pb-#{$padding} {
     padding-block-end: rem($padding); // Padding Bottom
+
+    @include not-support('padding-block-end: 0px') {
+      padding-bottom: rem($padding);
+    }
   }
 
   .pl-#{$padding} {
     padding-inline-start: rem($padding); // Padding Left
+
+    @include not-support('padding-inline-start: 0px') {
+      padding-left: rem($padding);
+    }
   }
 
   .pr-#{$padding} {
     padding-inline-end: rem($padding); // Padding Right
+
+    @include not-support('padding-inline-end: 0px') {
+      padding-right: rem($padding);
+    }
   }
 
   .px-#{$padding} {
     padding-inline: rem($padding); // Padding Left and Right
+
+    @include not-support('padding-inline: 0px') {
+      padding-left: rem($padding);
+      padding-right: rem($padding);
+    }
   }
 
   .py-#{$padding} {
     padding-block: rem($padding); // Padding Top and Bottom
+
+    @include not-support('padding-block: 0px') {
+      padding-top: rem($padding);
+      padding-bottom: rem($padding);
+    }
   }
 }
 

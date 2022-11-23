@@ -1,11 +1,25 @@
+@use '../utilities' as *;
+
 .w-fit-content {
   inline-size: fit-content; // Width
+
+  @include not-support('inline-size: fit-content') {
+    width: fit-content;
+  }
 }
 
 .h-auto {
   block-size: auto; // Height
+
+  @include not-support('block-size: auto') {
+    height: auto;
+  }
 }
 
 .reset-min-height {
   min-block-size: unset; // Min Height
+
+  @include not-support('min-block-size: unset') {
+    min-height: unset;
+  }
 }

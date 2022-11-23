@@ -18,5 +18,13 @@
     position: static;
     inline-size: fit-content;
     block-size: fit-content;
+
+    @include not-support('inline-size: fit-content') {
+      width: fit-content;
+    }
+
+    @include not-support('block-size: fit-content') {
+      height: fit-content;
+    }
   }
 }

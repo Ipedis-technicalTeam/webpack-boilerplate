@@ -8,28 +8,59 @@ $margins: 50; // insert max-value to create margin-[top, right, bottom, left] HE
   }
   .mt-#{$margin} {
     margin-block-start: rem($margin); // Margin Top
+
+    @include not-support('margin-block-start: 0px') {
+      margin-top: rem($margin);
+    }
   }
   .mb-#{$margin} {
     margin-block-end: rem($margin); // Margin Bottom
+
+    @include not-support('margin-block-end: 0px') {
+      margin-bottom: rem($margin);
+    }
   }
   .ml-#{$margin} {
     margin-inline-start: rem($margin); // Margin Left
+
+    @include not-support('margin-inline-start: 0px') {
+      margin-left: rem($margin);
+    }
   }
   .mr-#{$margin} {
     margin-inline-end: rem($margin); // Margin Right
+
+    @include not-support('margin-inline-end: 0px') {
+      margin-right: rem($margin);
+    }
   }
 
   .mx-#{$margin} {
     margin-inline: rem($margin); // Margin Left and Right
+
+    @include not-support('margin-inline: 0px') {
+      margin-left: rem($margin);
+      margin-right: rem($margin);
+    }
   }
 
   .my-#{$margin} {
     margin-block: rem($margin); // Margin Top and Bottom
+
+    @include not-support('margin-block: 0px') {
+      margin-top: rem($margin);
+      margin-bottom: rem($margin);
+    }
   }
 }
 
 .m-auto {
   margin-inline: auto; // Margin Left and Right
+
+  @include not-support('margin-inline: auto') {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /*Output will be: Ex mt-5, mr-5, ml-5, mb-5*/
