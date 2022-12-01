@@ -3,6 +3,14 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const htmlPartialsPageNames = require('./src/partials').htmlPartialsPageNames;
+const sectionPartials = require('./src/partials/sections').sectionPartials;
+
+let multipleSectionPlugins = sectionPartials.map(name => {
+  return new HtmlWebpackPlugin({
+    template: path.join(__dirname, `./src/partials/sections/${name}.html`),
+    filename: `${name}.html`,
+  });
+});
 
 let multipleHtmlPlugins = htmlPartialsPageNames.map(name => {
   return new HtmlWebpackPlugin({
@@ -56,5 +64,7 @@ module.exports = merge(common, {
     }),
 
     ...multipleHtmlPlugins,
+
+    ...multipleSectionPlugins,
   ],
 });

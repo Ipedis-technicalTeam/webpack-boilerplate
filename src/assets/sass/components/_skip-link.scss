@@ -2,9 +2,21 @@
 @use '../utilities' as *;
 
 #skip-links {
+  position: absolute;
+  inset-block-start: 0; // Top
+  inset-inline: 0; // Left and Right
   background-color: $bodyTextColor;
   color: contrast($bodyTextColor, $lightColor, $darkColor);
   z-index: 99999;
+
+  @include not-support('inset-block-start: 0') {
+    top: 0;
+  }
+
+  @include not-support('inset-inline: 0') {
+    left: 0;
+    right: 0;
+  }
 
   &:focus-within {
     padding: 5vmin;

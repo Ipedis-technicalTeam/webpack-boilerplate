@@ -1,6 +1,16 @@
 const path = require('path');
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const htmlPartialsPageNames = require('./src/partials').htmlPartialsPageNames;
+const sectionPartials = require('./src/partials/sections').sectionPartials;
+
+let multipleSectionPartialsPlugins = sectionPartials.map(name => {
+  return {
+    path: path.join(__dirname, `./src/partials/sections/${name}.html`),
+    template_filename: 'index.html',
+    inject: true,
+    location: 'main',
+  };
+});
 
 let multipleHtmlPartialsPlugins = htmlPartialsPageNames.map(name => {
   return {
@@ -44,6 +54,6 @@ module.exports = {
 
   plugins: [
     // PARTIALS HTML
-    new HtmlWebpackPartialsPlugin([...multipleHtmlPartialsPlugins]),
+    new HtmlWebpackPartialsPlugin([...multipleHtmlPartialsPlugins, ...multipleSectionPartialsPlugins]),
   ],
 };

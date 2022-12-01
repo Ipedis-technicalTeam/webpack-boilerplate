@@ -8,12 +8,12 @@ body {
   line-height: normal;
   text-align: start; // Left
 
-  @include mq($ps-mobile) {
-    font-size: rem(16px);
-  }
-
   @include not-support('text-align: start') {
     text-align: left;
+  }
+
+  @include mq($ps-mobile) {
+    font-size: rem(16px);
   }
 }
 
