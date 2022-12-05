@@ -4,6 +4,8 @@ const common = require('./webpack.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const htmlPartialsPageNames = require('./src/partials').htmlPartialsPageNames;
 const sectionPartials = require('./src/partials/sections').sectionPartials;
+const FR = require('./src/locales/fr.json');
+const EN = require('./src/locales/en.json');
 
 let multipleSectionPlugins = sectionPartials.map(name => {
   return new HtmlWebpackPlugin({
@@ -56,10 +58,10 @@ module.exports = merge(common, {
       template: path.join(__dirname, './src/index.html'),
       filename: 'index.html',
 
-      // ********* TO CHANGE TITLE FOR DEV MODE ********* //
-      title: 'Development',
+      // ********* TO CHANGE 'FR' OR 'EN' TITLE FOR DEV MODE ********* //
+      title: `${FR.head.title} | Development`,
 
-      // ********* TO CHANGE LANG FOR DEV MODE ********* //
+      // ********* TO CHANGE 'fr' OR 'en' LANG FOR DEV MODE ********* //
       lang: 'fr',
     }),
 
