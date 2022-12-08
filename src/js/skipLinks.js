@@ -4,8 +4,6 @@ const skipLink = skipLinks.querySelectorAll('.skip-link');
 const goToContent = (event, link) => {
   const id = document.querySelector(`${link}`);
 
-  console.log(event.key);
-
   if (event.key === 'Enter' || event.key === ' ') {
     id.setAttribute('tabindex', '0');
     id.focus();
