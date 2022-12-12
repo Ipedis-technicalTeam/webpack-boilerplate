@@ -15,3 +15,19 @@
 
   @return $em * 1em;
 }
+
+/*========== Convert Pixels to VW ==========*/
+
+@function vw($pixels, $screenSize: 1920) {
+  $vw: (math.div($pixels, $screenSize)) * 100;
+
+  @return $vw * 1vw;
+}
+
+/*========== Convert Pixels to VH ==========*/
+
+@function vh($pixels, $screenSize: 1080) {
+  $vh: (math.div($pixels, $screenSize)) * 100;
+
+  @return $vh * 1vh;
+}

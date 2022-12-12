@@ -1,3 +1,7 @@
+@use 'sass:math';
+@use '../theme' as *;
+@use '../utilities' as *;
+
 /*=================================FLEX=================================*/
 
 .d-flex {
@@ -14,5 +18,20 @@
   &--vh {
     align-items: center;
     justify-content: center;
+  }
+
+  &.row {
+    flex-direction: row;
+
+    @include mq($ps-mobile) {
+      flex-direction: column;
+    }
+
+    @for $i from 1 through 12 {
+      .col-#{$i} {
+        flex: 1 1 math.div($i, 12) * 100%;
+        max-inline-size: math.div($i, 12) * 100%;
+      }
+    }
   }
 }
