@@ -1,3 +1,3 @@
 module.exports = {
-  htmlPartialsPageNames: ['skip-links', 'navigation', 'header', 'main', 'footer'],
+  htmlPartialsPageNames: ['cookies', 'skip-links', 'navigation', 'header', 'main', 'footer']
 };

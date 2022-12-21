@@ -1,0 +1,120 @@
+@use '../theme' as *;
+@use '../utilities' as *;
+
+$darken-primary-color: darken($primaryColor, 10);
+
+.cookiesContainer {
+  position: fixed;
+  left: 65px;
+  bottom: 65px;
+  width: 570px;
+  height: auto;
+  border: 1px solid #ECEDF2;
+  border-radius: 4px;
+  box-shadow: 4px 4px 12px 0.5px rgba(0,0,0,0.1);
+  padding: 0 30px 30px 30px;
+  background-color: #ffffff;
+
+  @include mq($ps-small-tablet) {
+    left: 40px;
+    width: 450px;
+  }
+
+  @include mq($ps-mobile) {
+    bottom: 10px;
+    width: calc(100% - 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0;
+  }
+
+  @include mq($ps-mobile-landscape) {
+    width: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px 4px 0px 0px;
+  }
+
+  .desc {
+    color: #818E94;
+    font-family: $primaryFont;
+    font-size: 16px;
+    text-align: justify;
+    line-height: normal;
+
+    @include mq($ps-mobile) {
+      font-size: 14px;
+    }
+
+    &:first-of-type {
+      margin: 65px 0px 20px 0px;
+
+      @include mq($ps-mobile) {
+        margin: 60px 0px 20px 0px;
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 35px;
+      @include mq($ps-mobile) {
+        margin-bottom: 30px;
+      }
+
+    }
+
+  }
+
+  .refuseContinue {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    padding: 5px;
+    text-decoration: underline;
+    color: $primaryColor;
+    height: unset;
+    text-transform: none;
+    font-family: $primaryFont;
+    font-size: 16px;
+
+    @media #{$ps-mobile} {
+      font-size: 14px;
+      top: 15px;
+    }
+  }
+
+  &.remove-modal {
+    display: none;
+  }
+
+}
+
+.cookie-btn {
+  display: flex;
+  button {
+    font-family: $font-medium;
+    font-size: 14px;
+    width: 140px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primaryColor;
+    color: #ffffff;
+    text-transform: none;
+    border: 1px solid transparent;
+    transition: $general-transition;
+    border-radius: 4px;
+
+    &:hover, &:focus {
+      background: $darken-primary-color radial-gradient(circle, transparent 1%, $darken-primary-color 1%) center/15000%;
+      border-color: $primaryColor;
+      color: #ffffff;
+      outline: 2px solid #000000;
+    }
+
+    @media only screen and (max-width: 350px) {
+      width: 130px;
+    }
+  }
+}
+

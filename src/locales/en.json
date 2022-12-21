@@ -32,5 +32,12 @@
 
   "footer": {
     "heading": "English Footer"
+  },
+
+  "cookie": {
+    "refuse-continue": "Continue without accepting",
+    "labelBy": "Privacy preferences",
+    "desc": "We use cookies that are strictly necessary for the operation of this website as well as statistical cookies that allow us to anonymously know how users interact with the website in order to optimize your user experience.",
+    "desc1": "These cookies can be set at any time from the publication."
   }
 }
