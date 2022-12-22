@@ -15,6 +15,13 @@ if (document.cookie.match(/ps-cookie-venus=true/) !== null) {
     });
 }
 
+cookieBanner.addEventListener('keydown', function(e) {
+    if (e.shiftKey && e.key === "Tab") {
+        document.querySelector('.refuseContinue').focus();
+        e.preventDefault();
+    }
+});
+
 cookieBanner.querySelector('.accept-cookie')?.addEventListener('click', function() {
     document.cookie = 'ps-cookie-venus=true';
     removeModal();
@@ -28,7 +35,6 @@ cookieBanner.querySelector('.refuseContinue')?.addEventListener('click', functio
 cookieBanner.querySelector('.refuseContinue')?.addEventListener('keydown', function(e) {
     if (e.key == "Tab") {
         setTimeout(() => {
-            console.log('ooo', cookieBanner.querySelector('.accept-cookie'));
             cookieBanner.querySelector('.accept-cookie').focus();
             e.preventDefault();
         }, 0);
