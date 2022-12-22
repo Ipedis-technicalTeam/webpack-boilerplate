@@ -33,5 +33,12 @@
 
   "footer": {
     "heading": "French Footer"
+  },
+
+  "cookie": {
+    "refuse-continue": "Continuer sans accepter",
+    "labelBy": "Préférences de confidentialité",
+    "desc": "Nous utilisons des cookies strictement nécessaires au fonctionnement de ce site Web ainsi que des cookies statistiques qui nous permettent de savoir de manière anonyme comment les utilisateurs interagissent avec le site Web afin d'optimiser votre expérience utilisateur.",
+    "desc1": "Ces cookies sont paramétrables à tout moment depuis la publication."
   }
 }

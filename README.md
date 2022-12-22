@@ -220,6 +220,25 @@ To use the value in an attribute such as `"aria‑label"` or `"title"` use the `
 
 ---
 
+## Cookies 
+ - To use only if we are not using matomo cookie
+
+`HTML`
+ - In file `src/partials/index.js` add `cookies` as first item in array `htmlPartialsPageNames` 
+ 
+`Javascript`
+ - In file `src/index.js` import cookie js file -  `./js/cookies`;
+
+---
+## lINKS 
+- Use directly `target-page` on all elements apart complex components
+
+- for complex structure - use url:
+        - `doc/article/8/`
+        - *doc* depends on what has been used on the prefix of the landing page:
+        - e.g: [https://preview.beta.publispeak.net/editor/document/45/edit-landing-page](https://preview.beta.publispeak.net/editor/document/45/edit-landing-page) - section prefix
+---
+
 ## BUILD
 
 When ready to build use command line `npm run build` to compile and minify project, all the SCSS files will be purge and minify in the final CSS, so that all unused styles will not be compiled.

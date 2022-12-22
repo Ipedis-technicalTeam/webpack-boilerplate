@@ -47,7 +47,6 @@ body {
   min-block-size: 100vh; // Min-Height
   background-color: $bodyBackgroundColor;
   color: $bodyTextColor;
-  overflow-x: hidden;
 
   @include not-support('min-block-size: 100vh') {
     min-height: 100vh;
@@ -77,13 +76,11 @@ button {
   display: inline-block;
   color: inherit;
   box-sizing: border-box;
-  transition: all $transition-in-out;
   cursor: pointer;
 
   &:focus,
   &:focus-visible {
     outline-offset: em(5);
     outline: rem(2px) solid var(--focus-color, currentColor);
-    transition: all $transition-in-out;
   }
 }
