@@ -47,7 +47,6 @@ body {
   min-block-size: 100vh; // Min-Height
   background-color: $bodyBackgroundColor;
   color: $bodyTextColor;
-  overflow-x: hidden;
 
   @include not-support('min-block-size: 100vh') {
     min-height: 100vh;
